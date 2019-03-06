@@ -31,19 +31,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
             <h2>A simple react application that determines the type of triangle</h2>
           </section>
           <section>
-            <h2>Try me!</h2>
+            <h2>Enter in 3 side lengths of a triangle and find out what type it is!</h2>
             <form onSubmit={onSubmitForm}>
-              <label htmlFor="username">
-                Show Github repositories by
-                <span className="at-prefix">@</span>
-                <input
-                  id="username"
-                  type="text"
-                  placeholder="flexdinesh"
-                  value={username}
-                  onChange={onChangeUsername}
-                />
-              </label>
+            
             </form>
           </section>
         </div>

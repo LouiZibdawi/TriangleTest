@@ -1,32 +1,27 @@
-.home-page {
+.homePage{
+  input {
+    margin-top:5px;
+    max-width: 30%;
+  }
+  .equilateralTriangle {
   
-  h2 {
-    font-size: 1.5em;
+    img {
+      width:200px;
+      height:200px;
+    }
   }
+  .isoscelesTriangle {
   
-  section {
-    margin: 3em auto;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &.centered {
-      text-align: center;
+    img {
+      width:200px;
+      height:200px;
     }
   }
-
-  form {
-    margin-bottom: 1em;
-
-    input {
-      outline: none;
-      border-bottom: 1px dotted #999;
+  .scaleneTriangle {
+  
+    img {
+      width:200px;
+      height:200px;
     }
-  }
-
-  span.at-prefix {
-    color: black;
-    margin-left: 0.4em;
   }
 }

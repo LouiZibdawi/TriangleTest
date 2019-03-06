@@ -11,7 +11,7 @@
  */
 import { fromJS } from 'immutable';
 
-import { CHANGE_USERNAME } from './constants';
+import { FIND_TRIANGLE } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
@@ -20,9 +20,9 @@ const initialState = fromJS({
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_USERNAME:
+    case FIND_TRIANGLE:
       // Delete prefixed '@' from the github username
-      return state.set('username', action.name.replace(/@/gi, ''));
+      return state;
     default:
       return state;
   }

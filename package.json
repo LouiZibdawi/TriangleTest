@@ -2,6 +2,7 @@
   "name": "react-redux-template",
   "version": "1.0.0",
   "description": "A minimal react-redux template  with all the best practices",
+  "homepage": "https://louizibdawi.github.io/TriangleTest/",
   "repository": {
     "type": "git",
     "url": "git://github.com/LouiZibdawi/TriangleTest.git"
@@ -23,7 +24,9 @@
     "pretest": "npm run test:clean && npm run lint",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:clean": "rimraf ./coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",

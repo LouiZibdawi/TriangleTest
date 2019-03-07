@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import HomePage from 'containers/HomePage';
 import NotFoundPage from 'containers/NotFoundPage';
 
@@ -15,10 +15,12 @@ import './style.scss';
 
 const App = () => (
   <div className="app-wrapper">
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route path="" component={NotFoundPage} />
-    </Switch>
+    <HashRouter>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="" component={NotFoundPage} />
+      </Switch>
+    </HashRouter>
   </div>
 );
 

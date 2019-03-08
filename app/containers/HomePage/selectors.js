@@ -35,6 +35,11 @@ const makeSelectShowST = () => createSelector(
   (homeState) => homeState.get('isScaleneTriangle')
 );
 
+const makeSelectShowError = () => createSelector(
+  selectHome,
+  (homeState) => homeState.get('isInvalidInput')
+);
+
 
 export {
   selectHome,
@@ -44,4 +49,5 @@ export {
   makeSelectSide1,
   makeSelectSide2,
   makeSelectSide3,
+  makeSelectShowError,
 };

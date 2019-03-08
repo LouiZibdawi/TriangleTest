@@ -21,6 +21,7 @@ export const initialState = fromJS({
   isEquilateralTriangle: false,
   isIsoscelesTriangle: false,
   isScaleneTriangle: false,
+  isInvalidInput: false,
 });
 
 function homeReducer(state = initialState, action) {
@@ -43,6 +44,10 @@ function homeReducer(state = initialState, action) {
       return state.set('isIsoscelesTriangle', false);
     case actionTypes.HIDE_SCAL_TRIANGLE:
       return state.set('isScaleneTriangle', false);
+    case actionTypes.SHOW_INVALID_INPUT_ERROR:
+      return state.set('isInvalidInput', true);
+      case actionTypes.HIDE_INVALID_INPUT_ERROR:
+      return state.set('isInvalidInput', false);
     default:
       return state;
   }

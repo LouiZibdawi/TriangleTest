@@ -24,11 +24,6 @@ import * as actionTypes from './constants';
  *
  * @return {object}    An action object with a type of CHANGE_USERNAME
  */
-export function calculateTriangle(sides) {
-  return {
-    type: FIND_TRIANGLE, sides
-  };
-}
 
 export function changeSide1(side) {
   return {
@@ -52,43 +47,50 @@ export function changeSide3(side) {
 }
 
 export function showEquilateralTriangle() {
-  console.log('showing eq');
   return {
     type: actionTypes.SHOW_EQ_TRIANGLE,
   }
 }
 
 export function showIsoscelesTriangle() {
-  console.log('showing isos');
   return {
     type: actionTypes.SHOW_ISOS_TRIANGLE,
   }
 }
 
 export function showScaleneTriangle() {
-  console.log('showing scal');
   return {
     type: actionTypes.SHOW_SCAL_TRIANGLE,
   }
 }
 
 export function hideEquilateralTriangle() {
-  console.log('hiding eq');
   return {
     type: actionTypes.HIDE_EQ_TRIANGLE,
   }
 }
 
 export function hideIsoscelesTriangle() {
-  console.log('hiding isos');
   return {
     type: actionTypes.HIDE_ISOS_TRIANGLE,
   }
 }
 
 export function hideScaleneTriangle() {
-  console.log('hiding scal');
   return {
     type: actionTypes.HIDE_SCAL_TRIANGLE,
   }
 }
+
+export function showInvalidInputError() {
+  return {
+    type: actionTypes.SHOW_INVALID_INPUT_ERROR,
+  }
+}
+
+export function hideInvalidInputError() {
+  return {
+    type: actionTypes.HIDE_INVALID_INPUT_ERROR,
+  }
+}
+

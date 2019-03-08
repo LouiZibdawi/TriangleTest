@@ -20,45 +20,49 @@ import * as actions from './actions';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   
-  /*
-   * This function will search the store for the triangle that should be being displayed and display that
-   */
-
   calculateTriangle() {
-    const { side1, side2, side3 } = this.props;
+    const { side1, side2, side3  } = this.props;
     let numMatches = 0;
-    if(side1 != 0 && side1 != '' && side2 != 0 && side2 != '' && side3 != 0 && side3 != '') {
-      if(side1 == side2) 
-        numMatches++;
-      if(side1 == side3)
-        numMatches++;
-      if(side2 == side3)
-        numMatches++;
-      console.log(numMatches);
-      this.displayResult(numMatches);
+    if(side1 != 0 && side1 != '' && side2 != 0 && 
+      side2 != '' && side3 != 0 && side3 != '') {
+        console.log(side1, side2, side3);
+      if(parseFloat(side1) && parseFloat(side2) && parseFloat(side3)) {
+        if(side1 == side2) 
+          numMatches++;
+        if(side1 == side3)
+          numMatches++;
+        if(side2 == side3)
+          numMatches++;
+        console.log(numMatches);
+        this.displayResult(numMatches);
+      }
+      else {
+        this.props.showInvalidInputError();
+        this.props.hideEquilateralTriangle();
+        this.props.hideIsoscelesTriangle();
+        this.props.hideScaleneTriangle();
+      }
     } 
   }
   displayResult(numMatches) {
-    const {
-      hideEquilateralTriangle, hideIsoscelesTriangle, hideScaleneTriangle,
-      showEquilateralTriangle, showIsoscelesTriangle, showScaleneTriangle
-    } = this.props;
+
+    this.props.hideInvalidInputError();
 
     switch(numMatches) {
       case 0:
-        hideEquilateralTriangle();
-        hideIsoscelesTriangle();
-        showScaleneTriangle();
+        this.props.hideEquilateralTriangle();
+        this.props.hideIsoscelesTriangle();
+        this.props.showScaleneTriangle();
         break;
       case 1:
-        hideEquilateralTriangle();
-        showIsoscelesTriangle();
-        hideScaleneTriangle();
+        this.props.hideEquilateralTriangle();
+        this.props.showIsoscelesTriangle();
+        this.props.hideScaleneTriangle();
         break;
       case 3:
-        showEquilateralTriangle();
-        hideIsoscelesTriangle();
-        hideScaleneTriangle();
+        this.props.showEquilateralTriangle();
+        this.props.hideIsoscelesTriangle();
+        this.props.hideScaleneTriangle();
         break;
       default:
         return;
@@ -66,13 +70,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   }
 
   render() {
-    const {
-      isEquilateralTriangle, isIsoscelesTriangle, isScaleneTriangle, 
-      onChangeInput1, onChangeInput2, onChangeInput3
-    } = this.props;
-    
-    console.log(isEquilateralTriangle, isIsoscelesTriangle, isScaleneTriangle);
-
     return (
       <div className="homePage">
         <br></br>
@@ -82,20 +79,29 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           Please enter 3 sides of a triangle below. When the algorithm is complete 
           you will see what type of Triangle you have made below</p>
         <form id="inputVals" onSubmit={this.calculateTriangle()}>
-          <input className="form-control" type="text" placeholder="Side #1" onChange={onChangeInput1}/>
-          <input className="form-control" type="text" placeholder="Side #2" onChange={onChangeInput2}/>
-          <input className="form-control" type="text" placeholder="Side #3" onChange={onChangeInput3}/>
+          <input className="form-control" type="text" placeholder="Side #1" onChange={this.props.onChangeInput1}/>
+          <input className="form-control" type="text" placeholder="Side #2" onChange={this.props.onChangeInput2}/>
+          <input className="form-control" type="text" placeholder="Side #3" onChange={this.props.onChangeInput3}/>
         </form>
-        <br></br>
-        {isEquilateralTriangle &&
+        {this.props.isEquilateralTriangle &&
           <EquilateralTriangle></EquilateralTriangle>
         }
-        {isIsoscelesTriangle &&
+        {this.props.isIsoscelesTriangle &&
           <IsoscelesTriangle></IsoscelesTriangle>
         }
-        {isScaleneTriangle &&
+        {this.props.isScaleneTriangle &&
           <ScaleneTriangle></ScaleneTriangle>
         }
+        {this.props.isInvalidInput &&
+          <div>
+            <h3> You have entered invalid input.</h3>
+            <p> Please only enter 3 numbers (integers or decimals work)</p>
+            {/* MJ MEME */}
+            <img src="https://gdurl.com/AiQm" alt="MJ Meme"/>
+          </div>
+        }
+        <br></br>
+        <br></br>
         <br></br>
       </div>
     );
@@ -111,6 +117,7 @@ HomePage.propTypes = {
   isEquilateralTriangle: PropTypes.bool,
   isIsoscelesTriangle: PropTypes.bool,
   isScaleneTriangle: PropTypes.bool,
+  isInvalidInput: PropTypes.bool,
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -118,9 +125,14 @@ const mapDispatchToProps = (dispatch) => ({
   onChangeInput1: (evt) => dispatch(actions.changeSide1(evt.target.value)),
   onChangeInput2: (evt) => dispatch(actions.changeSide2(evt.target.value)),
   onChangeInput3: (evt) => dispatch(actions.changeSide3(evt.target.value)),
+
+  showInvalidInputError: () => dispatch(actions.showInvalidInputError()),
+  hideInvalidInputError: () => dispatch(actions.hideInvalidInputError()),
+
   showEquilateralTriangle: () => dispatch(actions.showEquilateralTriangle()),
   showIsoscelesTriangle: () => dispatch(actions.showIsoscelesTriangle()),
   showScaleneTriangle: () => dispatch(actions.showScaleneTriangle()),
+
   hideEquilateralTriangle: () => dispatch(actions.hideEquilateralTriangle()),
   hideIsoscelesTriangle: () => dispatch(actions.hideIsoscelesTriangle()),
   hideScaleneTriangle: () => dispatch(actions.hideScaleneTriangle()),
@@ -130,6 +142,9 @@ const mapStateToProps = createStructuredSelector({
   isEquilateralTriangle: selectors.makeSelectShowET(),
   isIsoscelesTriangle: selectors.makeSelectShowIT(),
   isScaleneTriangle: selectors.makeSelectShowST(),
+
+  isInvalidInput: selectors.makeSelectShowError(),
+
   side1: selectors.makeSelectSide1(),
   side2: selectors.makeSelectSide2(),
   side3: selectors.makeSelectSide3(),

@@ -3,46 +3,47 @@
 	<head>
 		<title>Triangle Test</title>
 		<link rel="stylesheet" href="//d5wfroyti11sa.cloudfront.net/prod/client/ts-12.1.2.min.css"/>
-		<link rel="stylesheet" href="./styles.css"/>
 		<script src="//d5wfroyti11sa.cloudfront.net/prod/client/ts-12.1.2.min.js"></script>
-		 <!-- Required meta tags -->
-		 <meta charset="utf-8">
-		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
-		 <!-- Bootstrap CSS -->
-		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Required meta tags -->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div data-ts="App">
 			<script>
-				ts.ui.Header.title('Triangle Test').icon('https://gdurl.com/TkBC').color('ts-blue');
+				ts.ui.Header.title('Triangle Test').icon('https://gdurl.com/zla8').color('ts-black');
 			</script>
 			<ul data-ts="Mains">
 				<li data-ts="Main" data-ts.label="Home">
-					<div data-ts="Content">
-						<div data-ts="Panel">
-							<noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
+					<noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
 
-							<!-- The app hooks into this div -->
-							<div id="app"></div>
-							<!-- Open Sans Font -->
-							<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-							<!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out the webpack config files in config/webpack for details) -->
-						</div>
-					</div>
+					<!-- The app hooks into this div -->
+					<div id="app" style="background-color: lightgray"></div>
+					<!-- Open Sans Font -->
+					<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+					<!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out the webpack config files in config/webpack for details) -->
 				</li>
-				<li data-ts="Main" data-ts.label="About" style="background:white;">
-					<div data-ts="Content">
-						<div data-ts="Panel">
-							<div class="container" style="margin-left:40px; margin-right:40px; width: 50%; margin: 0 auto;">
-								<h3>My name is Loui Zibdawi</h3>
-								<p>
-									<img src="https://gdurl.com/NA6h" alt="Loui Zibdawi" style="float:right;width:253px;height:450px;">
-									I am trying to master redux because I love redux so damn much!!
-								</p>
-							</div>
-						</div>
+				<li data-ts="Main" data-ts.label="About" style="background-color: lightgray">
+					<div class="container" style="margin-left:60px; margin-right:40px; width: 50%;">
+						<br></br>
+						<h3>My name is Loui Zibdawi</h3>
+						<img src="https://gdurl.com/NA6h" alt="Loui Zibdawi" style="float:right;width:253px;height:450px;">
+						<br></br>
+						<p>
+							This is my simple triangle testing application that uses React for the frontend framework 
+							and redux as the state management. I hope to get in touch with you soon!
+						</p>
 					</div>
 				</li>
 			</ul>

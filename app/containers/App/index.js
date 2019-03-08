@@ -10,6 +10,7 @@ import React from 'react';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 import HomePage from 'containers/HomePage';
 import NotFoundPage from 'containers/NotFoundPage';
+import Footer from 'components/Footer';
 
 import './style.scss';
 
@@ -21,6 +22,7 @@ const App = () => (
         <Route path="" component={NotFoundPage} />
       </Switch>
     </HashRouter>
+    <Footer />
   </div>
 );
 

@@ -1,12 +1,13 @@
-/*
- * HomeConstants
- * Each action has a corresponding type, which the reducer knows and picks up on.
- * To avoid weird typos between the reducer and the actions, we save them as
- * constants here. We prefix them with 'yourproject/YourComponent' so we avoid
- * reducers accidentally picking up actions they shouldn't.
- *
- * Follow this format:
- * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
- */
-
 export const FIND_TRIANGLE = 'TriangleTest/HomePage/FIND_TRIANGLE';
+
+export const CHANGE_SIDE1 = 'TriangleTest/HomePage/CHANGE_SIDE1';
+export const CHANGE_SIDE2 = 'TriangleTest/HomePage/CHANGE_SIDE2';
+export const CHANGE_SIDE3 = 'TriangleTest/HomePage/CHANGE_SIDE3';
+
+export const SHOW_EQ_TRIANGLE = 'TriangleTest/HomePage/SHOW_EQ_TRIANGLE';
+export const SHOW_ISOS_TRIANGLE = 'TriangleTest/HomePage/SHOW_ISOS_TRIANGLE';
+export const SHOW_SCAL_TRIANGLE = 'TriangleTest/HomePage/SHOW_SCAL_TRIANGLE';
+
+export const HIDE_EQ_TRIANGLE = 'TriangleTest/HomePage/HIDE_EQ_TRIANGLE';
+export const HIDE_ISOS_TRIANGLE = 'TriangleTest/HomePage/HIDE_ISOS_TRIANGLE';
+export const HIDE_SCAL_TRIANGLE = 'TriangleTest/HomePage/HIDE_SCAL_TRIANGLE';

@@ -25,24 +25,11 @@ import * as actionTypes from './constants';
  * @return {object}    An action object with a type of CHANGE_USERNAME
  */
 
-export function changeSide1(sideVal) {
+export function changeSide(sideName, sideVal) {
   return {
-    type: actionTypes.CHANGE_SIDE1,
+    type: actionTypes.CHANGE_SIDE,
+    sideName,
     sideVal,
-  }
-}
-
-export function changeSide2(sideVal) {
-  return {
-    type: actionTypes.CHANGE_SIDE2,
-    sideVal
-  }
-}
-
-export function changeSide3(sideVal) {
-  return {
-    type: actionTypes.CHANGE_SIDE3,
-    sideVal
   }
 }
 

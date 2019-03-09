@@ -51,6 +51,8 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       }
       else {
         this.props.showInvalidInputError(true);
+
+        //Have to hide all triangles in case they go from successful input to error
         this.props.showTriangle('isEquilateralTriangle', false);
         this.props.showTriangle('isIsoscelesTriangle', false);
         this.props.showTriangle('isScaleneTriangle', false);
@@ -110,9 +112,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           Please enter 3 sides of a triangle below. When the algorithm is complete 
           you will see what type of triangle you have made below</p>
         <form id="inputVals" onSubmit={this.calculateTriangle()}>
-          <input className="form-control" type="text" placeholder="Side #1" onChange={this.props.onChangeInput1}/>
-          <input className="form-control" type="text" placeholder="Side #2" onChange={this.props.onChangeInput2}/>
-          <input className="form-control" type="text" placeholder="Side #3" onChange={this.props.onChangeInput3}/>
+          <input name="side1" className="form-control" type="text" placeholder="Side #1" onChange={this.props.onChangeInput}/>
+          <input name="side2" className="form-control" type="text" placeholder="Side #2" onChange={this.props.onChangeInput}/>
+          <input name="side3" className="form-control" type="text" placeholder="Side #3" onChange={this.props.onChangeInput}/>
         </form>
 
         {/* Beyond this point is for the output of the algorithm. Either show an equilateral, 
@@ -153,10 +155,7 @@ HomePage.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onChangeInput1: (evt) => dispatch(actions.changeSide1(evt.target.value)),
-  onChangeInput2: (evt) => dispatch(actions.changeSide2(evt.target.value)),
-  onChangeInput3: (evt) => dispatch(actions.changeSide3(evt.target.value)),
-
+  onChangeInput: (evt) => dispatch(actions.changeSide(evt.target.name, evt.target.value)),
   showInvalidInputError: (show) => dispatch(actions.showInvalidInputError(show)),
   showTriangle: (isTriangle, show) => dispatch(actions.showTriangle(isTriangle, show)),
 });

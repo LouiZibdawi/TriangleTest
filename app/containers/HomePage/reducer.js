@@ -26,12 +26,8 @@ export const initialState = fromJS({
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.CHANGE_SIDE1:
-      return state.set('side1', action.sideVal);
-    case actionTypes.CHANGE_SIDE2:
-      return state.set('side2', action.sideVal);
-    case actionTypes.CHANGE_SIDE3:
-      return state.set('side3', action.sideVal);
+    case actionTypes.CHANGE_SIDE:
+      return state.set(action.sideName, action.sideVal);
     case actionTypes.SHOW_TRIANGLE:
       return state.set(action.isTriangle, action.show);
     case actionTypes.SHOW_INVALID_INPUT_ERROR:

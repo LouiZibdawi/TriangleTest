@@ -25,72 +25,39 @@ import * as actionTypes from './constants';
  * @return {object}    An action object with a type of CHANGE_USERNAME
  */
 
-export function changeSide1(side) {
+export function changeSide1(sideVal) {
   return {
     type: actionTypes.CHANGE_SIDE1,
-    side
+    sideVal,
   }
 }
 
-export function changeSide2(side) {
+export function changeSide2(sideVal) {
   return {
     type: actionTypes.CHANGE_SIDE2,
-    side
+    sideVal
   }
 }
 
-export function changeSide3(side) {
+export function changeSide3(sideVal) {
   return {
     type: actionTypes.CHANGE_SIDE3,
-    side
+    sideVal
   }
 }
 
-export function showEquilateralTriangle() {
+export function showTriangle(isTriangle, show) {
   return {
-    type: actionTypes.SHOW_EQ_TRIANGLE,
+    type: actionTypes.SHOW_TRIANGLE,
+    isTriangle,
+    show
   }
 }
 
-export function showIsoscelesTriangle() {
-  return {
-    type: actionTypes.SHOW_ISOS_TRIANGLE,
-  }
-}
-
-export function showScaleneTriangle() {
-  return {
-    type: actionTypes.SHOW_SCAL_TRIANGLE,
-  }
-}
-
-export function hideEquilateralTriangle() {
-  return {
-    type: actionTypes.HIDE_EQ_TRIANGLE,
-  }
-}
-
-export function hideIsoscelesTriangle() {
-  return {
-    type: actionTypes.HIDE_ISOS_TRIANGLE,
-  }
-}
-
-export function hideScaleneTriangle() {
-  return {
-    type: actionTypes.HIDE_SCAL_TRIANGLE,
-  }
-}
-
-export function showInvalidInputError() {
+export function showInvalidInputError(show) {
   return {
     type: actionTypes.SHOW_INVALID_INPUT_ERROR,
-  }
-}
-
-export function hideInvalidInputError() {
-  return {
-    type: actionTypes.HIDE_INVALID_INPUT_ERROR,
+    show
   }
 }
 

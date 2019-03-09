@@ -27,27 +27,15 @@ export const initialState = fromJS({
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.CHANGE_SIDE1:
-      return state.set('side1', action.side);
+      return state.set('side1', action.sideVal);
     case actionTypes.CHANGE_SIDE2:
-      return state.set('side2', action.side);
+      return state.set('side2', action.sideVal);
     case actionTypes.CHANGE_SIDE3:
-      return state.set('side3', action.side);
-    case actionTypes.SHOW_EQ_TRIANGLE:
-      return state.set('isEquilateralTriangle', true);
-    case actionTypes.SHOW_ISOS_TRIANGLE:
-      return state.set('isIsoscelesTriangle', true);
-    case actionTypes.SHOW_SCAL_TRIANGLE:
-      return state.set('isScaleneTriangle', true);
-    case actionTypes.HIDE_EQ_TRIANGLE:
-      return state.set('isEquilateralTriangle', false);
-    case actionTypes.HIDE_ISOS_TRIANGLE:
-      return state.set('isIsoscelesTriangle', false);
-    case actionTypes.HIDE_SCAL_TRIANGLE:
-      return state.set('isScaleneTriangle', false);
+      return state.set('side3', action.sideVal);
+    case actionTypes.SHOW_TRIANGLE:
+      return state.set(action.isTriangle, action.show);
     case actionTypes.SHOW_INVALID_INPUT_ERROR:
-      return state.set('isInvalidInput', true);
-      case actionTypes.HIDE_INVALID_INPUT_ERROR:
-      return state.set('isInvalidInput', false);
+      return state.set('isInvalidInput', action.show);
     default:
       return state;
   }

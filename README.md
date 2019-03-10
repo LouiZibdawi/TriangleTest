@@ -13,7 +13,7 @@ Sample Screenshots: <br/><br/>
 <br/>
 <img src="https://gdurl.com/img5" style="width:600px; height:500px"/>
 <br/>
-<img src="https://gdurl.com/BnvN" style="width:600px; height:500px"/>
+<img src="https://gdurl.com/cBnA" style="width:600px; height:500px"/>
 <br/>
 <br/>
 
